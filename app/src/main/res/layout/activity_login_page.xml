@@ -24,7 +24,7 @@
         android:fontFamily="@font/comfortaa"
         android:text="Login"
         android:textColor="@color/goldenAccent"
-        android:textSize="32dp"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -83,7 +83,7 @@
         android:layout_marginTop="118dp"
         android:fontFamily="@font/comfortaa"
         android:text="Forgot Password?"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textColor="@color/goldenAccent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
