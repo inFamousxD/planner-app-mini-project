@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offBlack"
+    tools:context=".Task_MainScreen">
+
+    <ImageView
+        android:id="@+id/blackBarTasks"
+        android:layout_width="420dp"
+        android:layout_height="96dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/colorPrimaryDark" />
+
+    <ImageView
+        android:id="@+id/taskIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:tint="@color/offWhite"
+        app:layout_constraintStart_toStartOf="@+id/blackBarTasks"
+        app:layout_constraintTop_toTopOf="@+id/blackBarTasks"
+        app:srcCompat="@drawable/ic_playlist_add_check_black_24dp" />
+
+    <ImageView
+        android:id="@+id/whiteUnderline"
+        android:layout_width="360dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/blackBarTasks"
+        app:layout_constraintTop_toBottomOf="@+id/TasksHeader"
+        app:srcCompat="@color/offWhite" />
+
+    <TextView
+        android:id="@+id/TasksHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Tasks"
+        android:textColor="@color/offWhite"
+        android:textSize="32dp"
+        app:layout_constraintStart_toEndOf="@+id/taskIcon"
+        app:layout_constraintTop_toTopOf="@+id/blackBarTasks" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

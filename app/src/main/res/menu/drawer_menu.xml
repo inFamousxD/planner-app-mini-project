@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+    <item android:title="Dashboard"
+        android:id="@+id/Dash"
+        android:icon="@drawable/ic_dashboard_black_24dp" />
+    <item android:title="Profile"
+        android:id="@+id/Prof"
+        android:icon="@drawable/ic_account_circle_black_24dp"/>
+    <item android:title="Tasks"
+        android:id="@+id/Task"
+        android:icon="@drawable/ic_playlist_add_check_black_24dp"/>
+    <item android:title="Quick Schedule"
+        android:id="@+id/Schedule"
+        android:icon="@drawable/ic_schedule_black_24dp"/>
+    <item android:title="Activity"
+        android:id="@+id/Activity"
+        android:icon="@drawable/ic_trending_up_black_24dp"/>
+    <item android:title="Settings"
+        android:id="@+id/Settings"
+        android:icon="@drawable/ic_settings_black_24dp"/>
+
+</menu>

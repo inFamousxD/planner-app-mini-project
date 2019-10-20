@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/background_for_Dash"
+        android:layout_width="380dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/offBlackDarker" />
+
+    <ImageView
+        android:id="@+id/background_for_graph"
+        android:layout_width="380dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background_for_Dash"
+        app:srcCompat="@color/offBlackDarker" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Tasks Added // Completed Daily"
+        android:textColor="@color/offWhite"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/background_for_graph"
+        app:layout_constraintStart_toStartOf="@+id/background_for_graph" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="144dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Dashboard"
+        android:textColor="@color/offWhite"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/background_for_Dash"
+        app:layout_constraintStart_toStartOf="@+id/background_for_Dash" />
+
+    <ImageView
+        android:id="@+id/graph"
+        android:layout_width="376dp"
+        android:layout_height="202dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/background_for_graph"
+        app:layout_constraintStart_toStartOf="@+id/background_for_graph"
+        app:srcCompat="@drawable/redyellowsimplegraph" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

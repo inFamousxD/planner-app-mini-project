@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/newTaskLayout"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:padding="10dp"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task details"
+        android:textColor="@color/goldenAccent"
+        android:paddingBottom="5dp"
+        android:fontFamily="@font/comfortaa"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <TextView
+        android:id="@+id/taskExpandTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tasknamegoeshere"
+        android:textColor="@color/offWhite"
+        android:fontFamily="@font/comfortaa"
+        android:textSize="16dp"
+        android:layout_marginStart="10dp"
+        android:paddingTop="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="163dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/okButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_style"
+                android:textColor="@color/goldenAccent"
+                android:text="Ok" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/delButton"
+                android:layout_width="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_style"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/offBlack"
+                android:textColor="@color/offWhite"
+                android:text="Delete" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

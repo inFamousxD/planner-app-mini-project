@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "86124812968",
+    "firebase_url": "https://fir-databaseplanner.firebaseio.com",
+    "project_id": "fir-databaseplanner",
+    "storage_bucket": "fir-databaseplanner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86124812968:android:34713b72330c7de200809d",
+        "android_client_info": {
+          "package_name": "com.example.appdraweractivitytest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86124812968-64gigq8euka4lekomrqj2dsdsiahvb53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appdraweractivitytest",
+            "certificate_hash": "1fa17d66c1830a2708595cc7b7ce8f6bce0fb15d"
+          }
+        },
+        {
+          "client_id": "86124812968-6c4k8erdvdgvqvosvk98osv8int05qbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF86iEKkf1UORg5YXXkUGOnUN7Ytr7r8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86124812968-6c4k8erdvdgvqvosvk98osv8int05qbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
