@@ -87,12 +87,6 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(R.anim.slide_right, R.anim.slide_left);
                         break;
 
-                    case  R.id.Dash :
-                        Intent intent1 = new Intent(MainActivity.this, DashboardActivity.class);
-                        startActivity(intent1);
-                        overridePendingTransition(R.anim.slide_right, R.anim.slide_left);
-                        break;
-
                     case R.id.Task :
                         Intent intent2 = new Intent(MainActivity.this, TaskRecyclerImplementation.class);
                         startActivity(intent2);
@@ -102,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.Schedule :
                         openDialogue();
                         break;
+
+                    case R.id.Settings :
+                        Intent intent1 = new Intent(MainActivity.this, SettingsActivity.class);
+                        startActivity(intent1);
+                        overridePendingTransition(R.anim.slide_right, R.anim.slide_left);
 
                      default: break;
                 }
