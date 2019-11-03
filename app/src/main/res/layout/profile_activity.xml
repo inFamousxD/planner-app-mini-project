@@ -42,22 +42,6 @@
         app:layout_constraintVertical_bias="0.4"
         app:srcCompat="@drawable/profimage" />
 
-    <TextView
-        android:id="@+id/profName"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="230dp"
-        android:layout_marginRight="230dp"
-        android:text="Aaditya Mankar"
-        android:fontFamily="@font/comfortaa"
-        android:textColor="@color/goldenAccent"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
     <ImageView
         android:id="@+id/mail"
         android:layout_width="30dp"
@@ -71,21 +55,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/ic_email_black_24dp" />
 
-    <TextView
-        android:id="@+id/emailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:fontFamily="@font/comfortaa"
-        android:layout_marginTop="51dp"
-        android:text="mememaster69@gmail.com"
-        android:textColor="@color/offWhite"
-        android:textSize="15dp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/mail"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
     <ImageView
         android:id="@+id/message"
         android:layout_width="30dp"
@@ -98,21 +67,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/ic_message_black_24dp" />
 
-    <TextView
-        android:id="@+id/messageNo"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="132dp"
-        android:text="9876543210"
-        android:textColor="@color/offWhite"
-        android:fontFamily="@font/comfortaa"
-        android:textSize="15dp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/message"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
     <ImageView
         android:id="@+id/employee_id"
         android:layout_width="30dp"
@@ -124,21 +78,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/ic_employee_id_24dp" />
-
-    <TextView
-        android:id="@+id/employee_id_number"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:fontFamily="@font/comfortaa"
-        android:layout_marginTop="211dp"
-        android:text="E-1994ACD // ASM69"
-        android:textColor="@color/offWhite"
-        android:textSize="15dp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/employee_id"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/streak"
@@ -154,14 +93,75 @@
         app:srcCompat="@drawable/ic_trending_up_black_24dp" />
 
     <TextView
+        android:id="@+id/profName"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="230dp"
+        android:layout_marginRight="230dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Aaditya Mankar"
+        android:textColor="@color/goldenAccent"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/emailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="51dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="mememaster69@gmail.com"
+        android:textColor="@color/offWhite"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/mail"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/messageNo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="132dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="9876543210"
+        android:textColor="@color/offWhite"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/message"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/employee_id_number"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="211dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="E-1994ACD // ASM69"
+        android:textColor="@color/offWhite"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/employee_id"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
         android:id="@+id/streak_value"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="290dp"
-        android:text="3 / 300 pts"
         android:fontFamily="@font/comfortaa"
+        android:text="3 / 300 pts"
         android:textColor="@color/offWhite"
         android:textSize="15dp"
         android:textStyle="normal"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/newTaskLayout"
     android:orientation="vertical"
     android:layout_width="350dp"
@@ -31,6 +32,13 @@
         android:layout_marginStart="10dp"
         android:paddingTop="25dp"/>
 
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:src="@color/goldenAccent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,7 +53,7 @@
                 android:id="@+id/okButton"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_gravity="center"
                 android:background="@drawable/button_style"
                 android:textColor="@color/goldenAccent"
@@ -60,7 +68,7 @@
             <Button
                 android:id="@+id/delButton"
                 android:layout_width="100dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_style"
                 android:layout_gravity="center"
@@ -69,6 +77,24 @@
                 android:text="Delete" />
         </LinearLayout>
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:src="@color/goldenAccent" />
+
+    <Button
+        android:id="@+id/markButton"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_style"
+        android:text="Mark as complete"
+        android:textColor="@color/goldenAccent" />
 
 
 </LinearLayout>

@@ -33,6 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     LinearLayout taskItem;
     Dialog dialog;
     public static int positionOfRemoval;
+    public static String status;
 
     public RecyclerViewAdapter(Context mContext, List<RecyclerViewItems> mData) {
         this.mContext = mContext;
@@ -57,17 +58,41 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 taskTitle = mData.get(mHolder.getAdapterPosition()).getTaskTitleRV();
                 id = mData.get(mHolder.getAdapterPosition()).getTaskDescRV();
                 final int pos = mHolder.getAdapterPosition();
+                status = mData.get(mHolder.getAdapterPosition()).getStatus();
                 positionOfRemoval = pos;
 
                 TextView taskTitleView = dialog.findViewById(R.id.taskExpandTaskName);
                 Button okButton = dialog.findViewById(R.id.okButton);
                 Button delButton = dialog.findViewById(R.id.delButton);
+                final Button markButton = dialog.findViewById(R.id.markButton);
                 taskTitleView.setText(taskTitle);
+
+                if (status == "complete") {
+                    markButton.setText("Set as incomplete");
+                    okButton.setText("Share");
+                }
+                else if (status == "pending") {
+                    okButton.setText("Share");
+                    markButton.setText("Set as complete");
+                }
+                else {
+                    markButton.setText("Add to personal tasks");
+                }
 
                 okButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        dialog.dismiss();
+                        if (status != "shared") {
+                            databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child("shared");
+                            String taskIdString = databaseReference.push().getKey();
+                            Tasks task = new Tasks(taskTitle, taskIdString);
+
+                            databaseReference.child(taskIdString).setValue(taskTitle);
+                            Toast.makeText(mContext, "Done", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+                        else
+                            dialog.dismiss();
                     }
                 });
                 delButton.setOnClickListener(new View.OnClickListener() {
@@ -76,12 +101,58 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         Toast.makeText(mContext, "Delete pressed", Toast.LENGTH_SHORT).show();
                         Toast.makeText(mContext, id, Toast.LENGTH_SHORT).show();
 
-                        databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child("pending").child(id);
+                        if (status == "all")
+                            databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child("shared").child(id);
+                        else
+                            databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child(status).child(id);
+
                         databaseReference.removeValue();
                         mData.remove(positionOfRemoval);
                         dialog.dismiss();
                     }
                 });
+                markButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String tempCopy = taskTitle;
+                        if (status == "complete") {
+                            databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child(status).child(id);
+                            databaseReference.removeValue();
+                            mData.remove(positionOfRemoval);
+
+                            databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child("pending");
+                            String taskIdString = databaseReference.push().getKey();
+                            Tasks task = new Tasks(tempCopy, taskIdString);
+
+                            databaseReference.child(taskIdString).setValue(tempCopy);
+                            Toast.makeText(mContext, "Done", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+                        else if (status == "pending") {
+                            databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child(status).child(id);
+                            databaseReference.removeValue();
+                            mData.remove(positionOfRemoval);
+
+                            databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child("complete");
+                            String taskIdStringComp = databaseReference.push().getKey();
+                            Tasks task = new Tasks(tempCopy, taskIdStringComp);
+
+                            databaseReference.child(taskIdStringComp).setValue(tempCopy);
+                            Toast.makeText(mContext, "Done", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+                        else {
+                            databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child("pending");
+                            String taskIdStringComp = databaseReference.push().getKey();
+                            Tasks task = new Tasks(tempCopy, taskIdStringComp);
+
+                            databaseReference.child(taskIdStringComp).setValue(tempCopy);
+                            Toast.makeText(mContext, "Done", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
                 dialog.show();
             }
         });

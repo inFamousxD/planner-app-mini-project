@@ -45,7 +45,7 @@ public class FragmentAll extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child("all");
+        mDatabase = FirebaseDatabase.getInstance().getReference("tasks").child("shared");
         recyclerViewItemsList = new ArrayList<>();
 
         mDatabase.addChildEventListener(new ChildEventListener() {
@@ -53,7 +53,7 @@ public class FragmentAll extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String string = dataSnapshot.getValue(String.class);
                 String keyId = dataSnapshot.getKey();
-                recyclerViewItemsList.add(new RecyclerViewItems(R.drawable.ic_status_shared, string, keyId));
+                recyclerViewItemsList.add(new RecyclerViewItems(R.drawable.ic_status_shared, string, keyId,"all"));
                 recyclerViewAdapter.notifyDataSetChanged();
             }
 
@@ -64,6 +64,7 @@ public class FragmentAll extends Fragment {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                recyclerViewAdapter.notifyItemRemoved(RecyclerViewAdapter.positionOfRemoval);
             }
 
             @Override

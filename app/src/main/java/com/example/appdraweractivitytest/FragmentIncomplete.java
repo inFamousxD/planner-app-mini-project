@@ -53,7 +53,7 @@ public class FragmentIncomplete extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String string = dataSnapshot.getValue(String.class);
                 String taskId = dataSnapshot.getKey();
-                recyclerViewItemsList.add(new RecyclerViewItems(R.drawable.ic_status_pending, string, taskId));
+                recyclerViewItemsList.add(new RecyclerViewItems(R.drawable.ic_status_pending, string, taskId, "pending"));
                 recyclerViewAdapter.notifyDataSetChanged();
             }
 

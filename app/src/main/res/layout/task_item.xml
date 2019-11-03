@@ -12,8 +12,7 @@
         android:layout_width="20sp"
         android:layout_height="20sp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="18dp"
-        android:tint="#00DF06"/>
+        android:layout_marginTop="18dp" />
 
     <TextView
         android:id="@+id/all_fragment_taskTitle"

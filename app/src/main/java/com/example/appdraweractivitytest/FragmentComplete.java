@@ -52,7 +52,8 @@ public class FragmentComplete extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String string = dataSnapshot.getValue(String.class);
-                recyclerViewItemsList.add(new RecyclerViewItems(R.drawable.ic_status_complete, string, "Task Description"));
+                String taskId = dataSnapshot.getKey();
+                recyclerViewItemsList.add(new RecyclerViewItems(R.drawable.ic_status_complete, string, taskId, "complete"));
                 recyclerViewAdapter.notifyDataSetChanged();
             }
 
@@ -63,7 +64,7 @@ public class FragmentComplete extends Fragment {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
+                recyclerViewAdapter.notifyItemRemoved(RecyclerViewAdapter.positionOfRemoval);
             }
 
             @Override
