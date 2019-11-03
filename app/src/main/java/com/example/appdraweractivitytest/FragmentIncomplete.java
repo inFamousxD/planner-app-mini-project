@@ -22,10 +22,9 @@ import java.util.List;
 
 public class FragmentIncomplete extends Fragment {
     View view;
-    private RecyclerView recyclerView;
     private List<RecyclerViewItems> recyclerViewItemsList;
-    DatabaseReference mDatabase;
-    RecyclerViewAdapter recyclerViewAdapter;
+    public static int countPending;
+    private RecyclerViewAdapter recyclerViewAdapter;
 
     public FragmentIncomplete() {
     }
@@ -34,7 +33,7 @@ public class FragmentIncomplete extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.all_fragment, container, false);
-        recyclerView = view.findViewById(R.id.recycler_all_fragment);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_all_fragment);
         recyclerViewAdapter = new RecyclerViewAdapter(getContext(), recyclerViewItemsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(recyclerViewAdapter);
@@ -45,7 +44,7 @@ public class FragmentIncomplete extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child("pending");
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child("pending");
         recyclerViewItemsList = new ArrayList<>();
 
         mDatabase.addChildEventListener(new ChildEventListener() {
@@ -54,6 +53,7 @@ public class FragmentIncomplete extends Fragment {
                 String string = dataSnapshot.getValue(String.class);
                 String taskId = dataSnapshot.getKey();
                 recyclerViewItemsList.add(new RecyclerViewItems(R.drawable.ic_status_pending, string, taskId, "pending"));
+                countPending = (int) dataSnapshot.getChildrenCount();
                 recyclerViewAdapter.notifyDataSetChanged();
             }
 

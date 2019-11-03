@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     public TextView tvName, tvMail;
 
+    public static int totalCount;
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mToggle.onOptionsItemSelected(item)) {
@@ -41,6 +47,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        prefs = getPreferences(Context.MODE_PRIVATE);
+        editor = prefs.edit();
+
+        totalCount = prefs.getInt("counter", 0);
+        totalCount++;
+        editor.putInt("counter", totalCount);
+        editor.apply();
+
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users").child(LoginPage.passwd).child("stats").child("login_frequency");
+        databaseReference.setValue(MainActivity.totalCount);
 
         mDatabase = FirebaseDatabase.getInstance().getReference("users").child(LoginPage.passwd);
 
@@ -101,6 +118,13 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent1 = new Intent(MainActivity.this, SettingsActivity.class);
                         startActivity(intent1);
                         overridePendingTransition(R.anim.slide_right, R.anim.slide_left);
+                        break;
+
+                    case R.id.Activity :
+                        Intent intent3 = new Intent(MainActivity.this, StatsActivity.class);
+                        startActivity(intent3);
+                        overridePendingTransition(R.anim.slide_right, R.anim.slide_left);
+                        break;
 
                      default: break;
                 }

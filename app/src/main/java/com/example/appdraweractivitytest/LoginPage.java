@@ -16,6 +16,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -23,6 +28,7 @@ public class LoginPage extends AppCompatActivity {
     public EditText emailId, password;
     public static String passwd, email;
     Button loginButton;
+    Integer loginTimesBuffer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +64,7 @@ public class LoginPage extends AppCompatActivity {
                             }
                             else {
                                 Toast.makeText(LoginPage.this, "Logging in..", Toast.LENGTH_SHORT);
-
+                                StatsActivity.done=false;
                                 startActivity(new Intent(LoginPage.this, MainActivity.class));
                             }
 

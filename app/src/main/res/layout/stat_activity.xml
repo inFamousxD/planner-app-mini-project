@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/unexpanded_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offBlack">
+
+
+    <ImageView
+        android:id="@+id/backGroundImage"
+        android:layout_width="432dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/stats_background" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="432dp"
+        android:layout_height="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backGroundImage"
+        app:srcCompat="@color/colorPrimaryDark" />
+
+    <ImageView
+        android:id="@+id/profPic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginRight="300dp"
+        android:adjustViewBounds="false"
+        app:layout_constraintBottom_toBottomOf="@+id/backGroundImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toEndOf="@+id/backGroundImage"
+        app:layout_constraintTop_toBottomOf="@+id/backGroundImage"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/profimage" />
+
+    <TextView
+        android:id="@+id/stat_profName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Stats"
+        android:textColor="@color/goldenAccent"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/completed_tasks"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="TODO"
+        android:text="0"
+        android:textColor="@color/goldenAccent"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="51dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="tasks completed"
+        android:textColor="@color/offWhite"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/completed_tasks"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/pending_tasks"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="128dp"
+        android:text="0"
+        android:textColor="@color/goldenAccent"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="132dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="pending tasks"
+        android:textColor="@color/offWhite"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/pending_tasks"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/added_tasks"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="208dp"
+        android:text="0"
+        android:textColor="@color/goldenAccent"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/employee_id_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="211dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="tasks added"
+        android:textColor="@color/offWhite"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/added_tasks"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/times_logged_in"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="288dp"
+        android:contentDescription="TODO"
+        android:text="0"
+        android:textColor="@color/goldenAccent"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/streak_value"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="290dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="times logged in"
+        android:textColor="@color/offWhite"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/times_logged_in"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

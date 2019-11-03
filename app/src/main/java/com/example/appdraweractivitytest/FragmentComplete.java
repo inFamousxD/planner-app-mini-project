@@ -26,6 +26,7 @@ public class FragmentComplete extends Fragment {
     private List<RecyclerViewItems> recyclerViewItemsList;
     DatabaseReference mDatabase;
     RecyclerViewAdapter recyclerViewAdapter;
+    public static long countComplete;
 
     public FragmentComplete() {
     }
@@ -54,6 +55,7 @@ public class FragmentComplete extends Fragment {
                 String string = dataSnapshot.getValue(String.class);
                 String taskId = dataSnapshot.getKey();
                 recyclerViewItemsList.add(new RecyclerViewItems(R.drawable.ic_status_complete, string, taskId, "complete"));
+                countComplete = dataSnapshot.getChildrenCount();
                 recyclerViewAdapter.notifyDataSetChanged();
             }
 

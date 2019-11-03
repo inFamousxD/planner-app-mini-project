@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +26,7 @@ public class QuickSchedule extends AppCompatDialogFragment {
     public EditText taskName, taskDescription;
     public Button addTask, cancelAddTask;
     public static String taskNameString, taskIdString;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference, incrementReference;
 
     @NonNull
     @Override
@@ -34,6 +35,7 @@ public class QuickSchedule extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
         databaseReference = FirebaseDatabase.getInstance().getReference("tasks").child(LoginPage.passwd).child("status").child("pending");
+        incrementReference = FirebaseDatabase.getInstance().getReference("users").child(LoginPage.passwd).child("stats").child("tasks_added");
 
         View view = inflater.inflate(R.layout.new_task_popup, null);
         builder.setView(view);
@@ -52,7 +54,10 @@ public class QuickSchedule extends AppCompatDialogFragment {
                     taskIdString = databaseReference.push().getKey();
                     Tasks task = new Tasks(taskNameString, taskIdString);
 
+                    ProfOpenActivity.added_tasks_count += 1;
+
                     databaseReference.child(taskIdString).setValue(taskNameString);
+                    incrementReference.setValue(ProfOpenActivity.added_tasks_count);
                     Toast.makeText(getActivity(), "task added", Toast.LENGTH_SHORT).show();
                     dismiss();
                 }
